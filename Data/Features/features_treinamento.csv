@@ -1,0 +1,4 @@
+mean_x,mean_y,mean_z,std_x,std_y,std_z,max_x,max_y,max_z,min_x,min_y,min_z,range_x,range_y,range_z,mean_magnitude,energy_x,energy_y,energy_z,atividade,start_index
+0.68,0.21,0.44,0.16,0.19,0.14,1.0,0.86,0.64,0.09,0.0,0.03,0.91,0.86,0.61,0.88,29.3,4.74,12.7,Repousando,0
+0.63,0.47,0.35,0.18,0.24,0.16,1.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.91,25.71,16.49,8.69,Digitando,30
+0.62,0.65,0.34,0.13,0.19,0.15,0.91,1.0,1.0,0.0,0.0,0.0,0.91,1.0,1.0,0.99,23.96,27.58,8.34,Escrevendo,60

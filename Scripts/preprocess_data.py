@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import os
 
-data = pd.read_csv('Data/Raw/data1.csv')
+data = pd.read_csv('Data/Raw/dados1.csv')
 
 X = data[['x', 'y', 'z']]
 y = data['atividade']
