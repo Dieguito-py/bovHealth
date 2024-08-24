@@ -28,7 +28,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         # date_time = now.strftime("%Y-%m-%d %H:%M:%S")
 
         # Salvar os dados 
-        with open('Data/Raw/dados1.csv', 'a') as file:
+        with open('Data/Raw/dados2.csv', 'a') as file:
             file.write(f'{data_str},{activity}\n')
 
         self.send_response(200)

@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 X_test = pd.read_csv('Data/Processed/X_test.csv')
 y_test = pd.read_csv('Data/Processed/y_test.csv').values.ravel()
 
-with open('Models/model_vaca_01.pkl', 'rb') as file:
+with open('Models/model_generic.pkl', 'rb') as file:
     model = pickle.load(file)
 
 predictions = model.predict(X_test)

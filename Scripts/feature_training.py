@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('Data/Raw/dados1.csv')
+df = pd.read_csv('Data/Raw/dados2.csv')
 
 df['index'] = df.index
 
@@ -12,8 +12,8 @@ def normalize_data(df):
 
 df = normalize_data(df)
 
-window_size_samples = 60  # 60 segundos / 0,5 segundos
-stride_samples = 30        # 10 segundos / 0,5 segundos
+window_size_samples = 20  # 60 segundos / 0,5 segundos
+stride_samples = 5        # 10 segundos / 0,5 segundos
 
 def extract_features(window):
     features = {}
@@ -65,7 +65,7 @@ while start_idx + window_size_samples <= num_samples:
     if not window.empty:
         features = extract_features(window)
         features['atividade'] = window['atividade'].mode()[0]  # Usa a moda para representar a atividade na janela
-        features['start_index'] = start_idx
+        # features['start_index'] = start_idx
         features_list.append(features)
     
     start_idx += stride_samples
@@ -73,6 +73,6 @@ while start_idx + window_size_samples <= num_samples:
 
 features_df = pd.DataFrame(features_list)
 
-features_df.to_csv('Data/Features/features_treinamento.csv', index=False)
+features_df.to_csv('Data/Features/features_treinamento3.csv', index=False)
 
 print("Features extraídas e salvas.")
