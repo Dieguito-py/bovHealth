@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('Data/Raw/dados2.csv')
+df = pd.read_csv('Data/Raw/dados3.csv')
 
 df['index'] = df.index
 
@@ -17,31 +17,18 @@ stride_samples = 5        # 10 segundos / 0,5 segundos
 
 def extract_features(window):
     features = {}
-    
-    # Média
+    # Retirar desvio padrão
+    # Retirar Valor Mínimo
+    # Retirar Valor Máximo
+
     features['mean_x'] = round(window['x'].mean(), 2)
     features['mean_y'] = round(window['y'].mean(), 2)
     features['mean_z'] = round(window['z'].mean(), 2)
     
-    # Desvio Padrão
-    features['std_x'] = round(window['x'].std(), 2)
-    features['std_y'] = round(window['y'].std(), 2)
-    features['std_z'] = round(window['z'].std(), 2)
-    
-    # Valor Máximo
-    features['max_x'] = round(window['x'].max(), 2)
-    features['max_y'] = round(window['y'].max(), 2)
-    features['max_z'] = round(window['z'].max(), 2)
-    
-    # Valor Mínimo
-    features['min_x'] = round(window['x'].min(), 2)
-    features['min_y'] = round(window['y'].min(), 2)
-    features['min_z'] = round(window['z'].min(), 2)
-    
-    # Amplitude
-    features['range_x'] = round(features['max_x'] - features['min_x'], 2)
-    features['range_y'] = round(features['max_y'] - features['min_y'], 2)
-    features['range_z'] = round(features['max_z'] - features['min_z'], 2)
+    # Amplitude (calculada diretamente)
+    features['range_x'] = round(window['x'].max() - window['x'].min(), 2)
+    features['range_y'] = round(window['y'].max() - window['y'].min(), 2)
+    features['range_z'] = round(window['z'].max() - window['z'].min(), 2)
     
     # Magnitude
     magnitude = np.sqrt(window['x']**2 + window['y']**2 + window['z']**2)

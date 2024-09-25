@@ -3,7 +3,7 @@ from scipy.signal import butter, filtfilt
 import matplotlib.pyplot as plt
 import numpy as np
 
-df = pd.read_csv('Data/Raw/dados1.csv')
+df = pd.read_csv('Data/Raw/dados2.csv')
 
 def butterworth_filter(data, cutoff, fs, order=4):
     nyq = 0.5 * fs  # Frequência Nyquist
@@ -22,4 +22,4 @@ df['x'] = df['x'].round(2)
 df['y'] = df['y'].round(2)
 df['z'] = df['z'].round(2)
 
-df.to_csv('Data/Processed/filtered_data.csv', columns=['x', 'y', 'z', 'atividade'], index=False)
+df.to_csv('Data/Processed/filtered_data2.csv', columns=['x', 'y', 'z', 'atividade'], index=False)

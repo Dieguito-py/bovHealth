@@ -3,12 +3,12 @@ from datetime import datetime
 from urllib.parse import parse_qs
 import threading
 
-print("[1] Repousando\n[2] Digitando\n[3] Escrevendo\n")
+print("[1] Mouse\n[2] Digitando\n[3] Celular\n")
 
 activity_map = {
-    1: "Repousando",
+    1: "Mouse",
     2: "Digitando",
-    3: "Escrevendo"
+    3: "Celular"
 }
 
 atv = int(input("Atividade: "))
@@ -28,7 +28,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         # date_time = now.strftime("%Y-%m-%d %H:%M:%S")
 
         # Salvar os dados 
-        with open('Data/Raw/dados2.csv', 'a') as file:
+        with open('Data/Raw/dados3.csv', 'a') as file:
             file.write(f'{data_str},{activity}\n')
 
         self.send_response(200)
